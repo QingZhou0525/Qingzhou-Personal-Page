@@ -1,0 +1,858 @@
+
+<head>
+    <meta charset="UTF-8">
+    <title>清粥加酒</title>
+    <link type="text/css" rel="stylesheet" href="mystyle.css" >
+    <script type="text/javascript" src="myjs.js"></script>
+    <script type="text/javascript" src="welcome.js"></script>
+    <!--<script type="text/javascript" src="navfunc.js"></script>-->
+    <script>
+
+        function $(id){
+            return document.getElementById(id);
+        }
+
+        //时间计时器
+        setInterval(function () {
+            $("date_time").innerText = show_time();
+        },0);
+
+        // //海报滑动事件
+        // function  ps1_moveon() {
+        //     $("PS1").style.top = "50px";
+        //     $("inf1").style.top = "-530px";
+        // }
+        // function  ps1_moveout() {
+        //     $("PS1").style.top = "0px";
+        //     $("inf1").style.top = "-580px";
+        // }
+        // function  ps2_moveon() {
+        //     $("PS2").style.top = "50px";
+        //     $("inf2").style.top = "-530px";
+        // }
+        // function  ps2_moveout() {
+        //     $("PS2").style.top = "0px";
+        //     $("inf2").style.top = "-580px";
+        // }
+        // function  ps3_moveon() {
+        //     $("PS3").style.top = "-50px";
+        //     $("inf3").style.top = "-50px";
+        // }
+        // function  ps3_moveout() {
+        //     $("PS3").style.top = "0px";
+        //     $("inf3").style.top = "0px";
+        // }
+
+        //二维码渐出
+        function qq_imgshow() {
+            $("qq_div").style.height = "380px";
+            $("erweima_div").style.height = "380px";
+        }
+        function qq_imgclose() {
+            $("qq_div").style.height = "0px";
+            $("erweima_div").style.height = "0px";
+        }
+        function wechat_imgshow() {
+            $("wechat_div").style.height = "380px";
+            $("erweima_div").style.height = "380px";
+        }
+        function wechat_imgclose() {
+            $("wechat_div").style.height = "0px";
+            $("erweima_div").style.height = "0px";
+        }
+        function email_show() {
+            $("email_div").style.height = "80px";
+            $("erweima_div").style.height = "80px";
+        }
+        function email_close() {
+            $("email_div").style.height = "0px";
+            $("erweima_div").style.height = "0px";
+        }
+
+        // window.onload = function(){
+
+            setTimeout(function () {
+                //w字母的上下浮动
+                var w_is_top = false;
+                setInterval(function () {
+                    w_updown(w_is_top);
+                    w_is_top=w_updown(w_is_top);
+                },1000)
+            },0);
+
+            setTimeout(function () {
+                //e字母的上下浮动
+                var e_is_top = false;
+                setInterval(function () {
+                    e_updown(e_is_top);
+                    e_is_top=e_updown(e_is_top);
+                },1000)
+            },300);
+
+            setTimeout(function () {
+                //l字母的上下浮动
+                var l_is_top = false;
+                setInterval(function () {
+                    l_updown(l_is_top);
+                    l_is_top=l_updown(l_is_top);
+                },1000)
+            },600);
+
+            setTimeout(function () {
+                //c字母的上下浮动
+                var c_is_top = false;
+                setInterval(function () {
+                    c_updown(c_is_top);
+                    c_is_top=c_updown(c_is_top);
+                },1000)
+            },900);
+
+            setTimeout(function () {
+                //o字母的上下浮动
+                var o_is_top = false;
+                setInterval(function () {
+                    o_updown(o_is_top);
+                    o_is_top=o_updown(o_is_top);
+                },1000)
+            },1200);
+
+            setTimeout(function () {
+                //m字母的上下浮动
+                var m_is_top = false;
+                setInterval(function () {
+                    m_updown(m_is_top);
+                    m_is_top=m_updown(m_is_top);
+                },1000)
+            },1500);
+
+            setTimeout(function () {
+                //e2字母的上下浮动
+                var e2_is_top = false;
+                setInterval(function () {
+                    e2_updown(e2_is_top);
+                    e2_is_top=e2_updown(e2_is_top);
+                },1000)
+            },1800);
+
+
+
+        // }
+
+        //单击照片事件
+        var is_click = false;
+        function photo_click() {
+            if(!is_click){
+                $("mid_part").style.width = "580px";
+                $("introduce").style.width = "1400px"
+                $("page_mid").style.width = "1400px";
+                is_click = true;
+            }else{
+                $("mid_part").style.width = "0px";
+                $("introduce").style.width = "800px"
+                $("page_mid").style.width = "800px";
+                is_click = false;
+            }
+        }
+
+        //notebook
+        var is_clicked1 = false;
+        var is_clicked2 = false;
+        var is_clicked3 = false;
+        var is_clicked4 = false;
+        var is_clicked5 = false;
+        function book1_click() {
+            if(!is_clicked1){
+                $("book_block1_books").style.height = "360px"
+                $("book_block2_books").style.height = "0px"
+                $("book_block3_books").style.height = "0px"
+                $("book_block4_books").style.height = "0px"
+                $("book_block5_books").style.height = "0px"
+                $("book_block1").style.height = "520px";
+                $("book_block2").style.height = "150px";
+                $("book_block3").style.height = "150px";
+                $("put_4and5").style.marginTop = "10px";
+                is_clicked1 = true;
+                is_clicked2 = false;
+                is_clicked3 = false;
+                is_clicked4 = false;
+                is_clicked5 = false;
+            }else{
+                $("book_block1_books").style.height = "0px"
+                $("book_block1").style.height = "150px";
+                $("put_4and5").style.marginTop = "100px";
+                is_clicked1= false;
+            }
+        }
+        function book2_click() {
+            if(!is_clicked2){
+                $("book_block2_books").style.height = "360px"
+                $("book_block1_books").style.height = "0px"
+                $("book_block3_books").style.height = "0px"
+                $("book_block4_books").style.height = "0px"
+                $("book_block5_books").style.height = "0px"
+                $("book_block2").style.height = "520px";
+                $("book_block1").style.height = "150px";
+                $("book_block3").style.height = "150px";
+                $("put_4and5").style.marginTop = "10px";
+                is_clicked2 = true;
+                is_clicked1 = false;
+                is_clicked3 = false;
+                is_clicked4 = false;
+                is_clicked5 = false;
+            }else{
+                $("book_block2_books").style.height = "0px"
+                $("book_block2").style.height = "150px";
+                $("put_4and5").style.marginTop = "100px";
+                is_clicked2= false;
+            }
+        }
+        function book3_click() {
+            if(!is_clicked3){
+                $("book_block3_books").style.height = "360px"
+                $("book_block1_books").style.height = "0px"
+                $("book_block2_books").style.height = "0px"
+                $("book_block4_books").style.height = "0px"
+                $("book_block5_books").style.height = "0px"
+                $("book_block3").style.height = "520px";
+                $("book_block1").style.height = "150px";
+                $("book_block2").style.height = "150px";
+                $("put_4and5").style.marginTop = "10px";
+                is_clicked3 = true;
+                is_clicked1 = false;
+                is_clicked2 = false;
+                is_clicked4 = false;
+                is_clicked5 = false;
+            }else{
+                $("book_block3_books").style.height = "0px"
+                $("book_block3").style.height = "150px";
+                $("put_4and5").style.marginTop = "100px";
+                is_clicked3= false;
+            }
+        }
+        function book4_click() {
+            if(!is_clicked4){
+                $("book_block4_books").style.height = "360px"
+                $("book_block1_books").style.height = "0px"
+                $("book_block2_books").style.height = "0px"
+                $("book_block3_books").style.height = "0px"
+                $("book_block5_books").style.height = "0px"
+                $("book_block1").style.height = "150px";
+                $("book_block2").style.height = "150px";
+                $("book_block3").style.height = "150px";
+                $("put_4and5").style.marginTop = "100px";
+                is_clicked4= true;
+                is_clicked1= false;
+                is_clicked2= false;
+                is_clicked3= false;
+                is_clicked5= false;
+            }else{
+                $("book_block4_books").style.height = "0px";
+                is_clicked4= false;
+            }
+        }
+        function book5_click() {
+            if(!is_clicked5){
+                $("book_block5_books").style.height = "360px"
+                $("book_block1_books").style.height = "0px"
+                $("book_block2_books").style.height = "0px"
+                $("book_block3_books").style.height = "0px"
+                $("book_block4_books").style.height = "0px"
+                $("book_block1").style.height = "150px";
+                $("book_block2").style.height = "150px";
+                $("book_block3").style.height = "150px";
+                $("put_4and5").style.marginTop = "100px";
+                is_clicked5= true;
+                is_clicked1= false;
+                is_clicked2= false;
+                is_clicked3= false;
+                is_clicked4= false;
+            }else{
+                $("book_block5_books").style.height = "0px";
+                is_clicked5= false;
+            }
+        }
+
+        function initbook() {
+            $("book_block1_books").style.height = "0px"
+            $("book_block1").style.height = "150px";
+            $("put_4and5").style.marginTop = "100px";
+            is_clicked1= false;
+            $("book_block2_books").style.height = "0px"
+            $("book_block2").style.height = "150px";
+            $("put_4and5").style.marginTop = "100px";
+            is_clicked2= false;
+            $("book_block3_books").style.height = "0px"
+            $("book_block3").style.height = "150px";
+            $("put_4and5").style.marginTop = "100px";
+            is_clicked3= false;
+            $("book_block4_books").style.height = "0px";
+            is_clicked4= false;
+            $("book_block5_books").style.height = "0px";
+            is_clicked5= false;
+        }
+
+
+        //导航栏的滑动事件
+        function navclick1() {
+            document.getElementById("nav_choose").style.left = "0px";
+            document.getElementById("nav1").style.fontSize = "20px";
+            document.getElementById("nav1").style.color = "rgba(255, 255, 255, 0.7)";
+            document.getElementById("nav1").style.textShadow = "4px 4px 4px rgba(0, 0, 0, 0.26)";
+            document.getElementById("nav2").style.fontSize = "18px";
+            document.getElementById("nav2").style.color = "black";
+            document.getElementById("nav2").style.textShadow = "2px 2px 2px rgba(0, 0, 0, 0.26)";
+            // document.getElementById("nav3").style.fontSize = "18px";
+            // document.getElementById("nav3").style.color = "black";
+            // document.getElementById("nav3").style.textShadow = "2px 2px 2px rgba(0, 0, 0, 0.26)";
+            document.getElementById("nav4").style.fontSize = "18px";
+            document.getElementById("nav4").style.color = "black";
+            document.getElementById("nav4").style.textShadow = "2px 2px 2px rgba(0, 0, 0, 0.26)";
+            document.getElementById("photos").style.width = "0px";
+            // document.getElementById("PS").style.width = "0px";
+            document.getElementById("notebook").style.width = "0px";
+            document.getElementById("webs").style.width = "800px";
+            document.getElementById("container_main").style.height = "800px";
+            document.getElementById("container_main").style.height = "800px";
+            initbook();
+        }
+        function navclick2() {
+            document.getElementById("nav_choose").style.left = "266px";
+            document.getElementById("nav2").style.fontSize = "20px";
+            document.getElementById("nav2").style.color = "rgba(255, 255, 255, 0.7)";
+            document.getElementById("nav2").style.textShadow = "4px 4px 4px rgba(0, 0, 0, 0.26)";
+            document.getElementById("nav1").style.fontSize = "18px";
+            document.getElementById("nav1").style.color = "black";
+            document.getElementById("nav1").style.textShadow = "2px 2px 2px rgba(0, 0, 0, 0.26)";
+            // document.getElementById("nav3").style.fontSize = "18px";
+            // document.getElementById("nav3").style.color = "black";
+            // document.getElementById("nav3").style.textShadow = "2px 2px 2px rgba(0, 0, 0, 0.26)";
+            document.getElementById("nav4").style.fontSize = "18px";
+            document.getElementById("nav4").style.color = "black";
+            document.getElementById("nav4").style.textShadow = "2px 2px 2px rgba(0, 0, 0, 0.26)";
+
+            document.getElementById("webs").style.width = "0px";
+            document.getElementById("photos").style.width = "800px";
+            // document.getElementById("PS").style.width = "0px";
+            document.getElementById("notebook").style.width = "0px";
+
+            document.getElementById("container_main").style.height = "3550px";
+            initbook();
+
+        }
+
+        function navclick4() {
+            document.getElementById("nav_choose").style.left = "532px";
+            document.getElementById("nav4").style.fontSize = "20px";
+            document.getElementById("nav4").style.color = "rgba(255, 255, 255, 0.7)";
+            document.getElementById("nav4").style.textShadow = "4px 4px 4px rgba(0, 0, 0, 0.26)";
+            document.getElementById("nav1").style.fontSize = "18px";
+            document.getElementById("nav1").style.color = "black";
+            document.getElementById("nav1").style.textShadow = "2px 2px 2px rgba(0, 0, 0, 0.26)";
+            document.getElementById("nav2").style.fontSize = "18px";
+            document.getElementById("nav2").style.color = "black";
+            document.getElementById("nav2").style.textShadow = "2px 2px 2px rgba(0, 0, 0, 0.26)";
+            // document.getElementById("nav3").style.fontSize = "18px";
+            // document.getElementById("nav3").style.color = "black";
+            // document.getElementById("nav3").style.textShadow = "2px 2px 2px rgba(0, 0, 0, 0.26)";
+
+            document.getElementById("webs").style.width = "0px";
+            document.getElementById("photos").style.width = "0px";
+            // document.getElementById("PS").style.width = "0px";
+            document.getElementById("notebook").style.width = "800px";
+
+            document.getElementById("container_main").style.height = "800px";
+        }
+
+    </script>
+
+    <script type="text/javascript" src="photos.js"></script>
+    <!--svg动画-->
+    <script>
+        //svg动画
+        function webname1_moveon() {
+            $("rect1").style.animation = "draw 5s ease-out infinite"
+            $("rect1").style.animationPlayState = "running";
+            $("rect1").style.boxShadow = "5px 5px 5px 5px rgba(4, 4, 4, 0.55)";
+            $("rect1").style.stroke = "white";
+        }
+        function webname1_moveout() {
+            $("rect1").style.animationPlayState = "paused";
+            $("rect1").style.animation = "draw_back 1s ease-out 1"
+            $("rect1").style.animationPlayState = "running";
+            $("rect1").style.boxShadow = "2px 2px 2px 2px rgba(4, 4, 4, 0.55)";
+            $("rect1").style.stroke = "black";
+        }
+        function webname2_moveon() {
+            $("rect2").style.animation = "draw 5s ease-out infinite"
+            $("rect2").style.animationPlayState = "running";
+            $("rect2").style.boxShadow = "5px 5px 5px 5px rgba(4, 4, 4, 0.55)";
+            $("rect2").style.stroke = "white";
+        }
+        function webname2_moveout() {
+            $("rect2").style.animationPlayState = "paused";
+            $("rect2").style.animation = "draw_back 1s ease-out 1"
+            $("rect2").style.animationPlayState = "running";
+            $("rect2").style.boxShadow = "2px 2px 2px 2px rgba(4, 4, 4, 0.55)";
+            $("rect2").style.stroke = "black";
+        }
+        function webname3_moveon() {
+            $("rect3").style.animation = "draw 5s ease-out infinite"
+            $("rect3").style.animationPlayState = "running";
+            $("rect3").style.boxShadow = "5px 5px 5px 5px rgba(4, 4, 4, 0.55)";
+            $("rect3").style.stroke = "white";
+        }
+        function webname3_moveout() {
+            $("rect3").style.animationPlayState = "paused";
+            $("rect3").style.animation = "draw_back 1s ease-out 1"
+            $("rect3").style.animationPlayState = "running";
+            $("rect3").style.boxShadow = "2px 2px 2px 2px rgba(4, 4, 4, 0.55)";
+            $("rect3").style.stroke = "black";
+        }
+        function webname4_moveon() {
+            $("rect4").style.animation = "draw 5s ease-out infinite"
+            $("rect4").style.animationPlayState = "running";
+            $("rect4").style.boxShadow = "5px 5px 5px 5px rgba(4, 4, 4, 0.55)";
+            $("rect4").style.stroke = "white";
+        }
+        function webname4_moveout() {
+            $("rect4").style.animationPlayState = "paused";
+            $("rect4").style.animation = "draw_back 1s ease-out 1"
+            $("rect4").style.animationPlayState = "running";
+            $("rect4").style.boxShadow = "2px 2px 2px 2px rgba(4, 4, 4, 0.55)";
+            $("rect4").style.stroke = "black";
+        }
+        function webname5_moveon() {
+            $("rect5").style.animation = "draw 5s ease-out infinite"
+            $("rect5").style.animationPlayState = "running";
+            $("rect5").style.boxShadow = "5px 5px 5px 5px rgba(4, 4, 4, 0.55)";
+            $("rect5").style.stroke = "white";
+        }
+        function webname5_moveout() {
+            $("rect5").style.animationPlayState = "paused";
+            $("rect5").style.animation = "draw_back 1s ease-out 1"
+            $("rect5").style.animationPlayState = "running";
+            $("rect5").style.boxShadow = "2px 2px 2px 2px rgba(4, 4, 4, 0.55)";
+            $("rect5").style.stroke = "black";
+        }
+        function webname6_moveon() {
+            $("rect6").style.animation = "draw 5s ease-out infinite"
+            $("rect6").style.animationPlayState = "running";
+            $("rect6").style.boxShadow = "5px 5px 5px 5px rgba(4, 4, 4, 0.55)";
+            $("rect6").style.stroke = "white";
+        }
+        function webname6_moveout() {
+            $("rect6").style.animationPlayState = "paused";
+            $("rect6").style.animation = "draw_back 1s ease-out 1"
+            $("rect6").style.animationPlayState = "running";
+            $("rect6").style.boxShadow = "2px 2px 2px 2px rgba(4, 4, 4, 0.55)";
+            $("rect6").style.stroke = "black";
+        }
+        function webname7_moveon() {
+            $("rect7").style.animation = "draw 5s ease-out infinite"
+            $("rect7").style.animationPlayState = "running";
+            $("rect7").style.boxShadow = "5px 5px 5px 5px rgba(4, 4, 4, 0.55)";
+            $("rect7").style.stroke = "white";
+        }
+        function webname7_moveout() {
+            $("rect7").style.animationPlayState = "paused";
+            $("rect7").style.animation = "draw_back 1s ease-out 1"
+            $("rect7").style.animationPlayState = "running";
+            $("rect7").style.boxShadow = "2px 2px 2px 2px rgba(4, 4, 4, 0.55)";
+            $("rect7").style.stroke = "black";
+        }
+        function webname8_moveon() {
+            $("rect8").style.animation = "draw 5s ease-out infinite"
+            $("rect8").style.animationPlayState = "running";
+            $("rect8").style.boxShadow = "5px 5px 5px 5px rgba(4, 4, 4, 0.55)";
+            $("rect8").style.stroke = "white";
+        }
+        function webname8_moveout() {
+            $("rect8").style.animationPlayState = "paused";
+            $("rect8").style.animation = "draw_back 1s ease-out 1"
+            $("rect8").style.animationPlayState = "running";
+            $("rect8").style.boxShadow = "2px 2px 2px 2px rgba(4, 4, 4, 0.55)";
+            $("rect8").style.stroke = "black";
+        }
+        function webname9_moveon() {
+            $("rect9").style.animation = "draw 5s ease-out infinite"
+            $("rect9").style.animationPlayState = "running";
+            $("rect9").style.boxShadow = "5px 5px 5px 5px rgba(4, 4, 4, 0.55)";
+            $("rect9").style.stroke = "white";
+        }
+        function webname9_moveout() {
+            $("rect9").style.animationPlayState = "paused";
+            $("rect9").style.animation = "draw_back 1s ease-out 1"
+            $("rect9").style.animationPlayState = "running";
+            $("rect9").style.boxShadow = "2px 2px 2px 2px rgba(4, 4, 4, 0.55)";
+            $("rect9").style.stroke = "black";
+        }
+        function webname10_moveon() {
+            $("rect10").style.animation = "draw 5s ease-out infinite"
+            $("rect10").style.animationPlayState = "running";
+            $("rect10").style.boxShadow = "5px 5px 5px 5px rgba(4, 4, 4, 0.55)";
+            $("rect10").style.stroke = "white";
+        }
+        function webname10_moveout() {
+            $("rect10").style.animationPlayState = "paused";
+            $("rect10").style.animation = "draw_back 1s ease-out 1"
+            $("rect10").style.animationPlayState = "running";
+            $("rect10").style.boxShadow = "2px 2px 2px 2px rgba(4, 4, 4, 0.55)";
+            $("rect10").style.stroke = "black";
+        }
+        function webname11_moveon() {
+            $("rect11").style.animation = "draw 5s ease-out infinite"
+            $("rect11").style.animationPlayState = "running";
+            $("rect11").style.boxShadow = "5px 5px 5px 5px rgba(4, 4, 4, 0.55)";
+            $("rect11").style.stroke = "white";
+        }
+        function webname11_moveout() {
+            $("rect11").style.animationPlayState = "paused";
+            $("rect11").style.animation = "draw_back 1s ease-out 1"
+            $("rect11").style.animationPlayState = "running";
+            $("rect11").style.boxShadow = "2px 2px 2px 2px rgba(4, 4, 4, 0.55)";
+            $("rect11").style.stroke = "black";
+        }
+    </script>
+</head>
+
+<body>
+
+    <!--  page1 上半部分 -->
+    <div id="page_1" style="width: 100%;display: flex;flex-direction: row;justify-content: center;">
+        <!--left-->
+        <div id="page_left" style="width: 30%;height: 200px; " ></div>
+        <!--mid-->
+        <div id="page_mid" style="width: 800px;display: flex;flex-direction: column;justify-content: center;transition: width .8s;">
+            <!--介绍-->
+            <div id="introduce">
+                <div id="left_part">
+                    <div id="photo" onclick="photo_click()" ></div>
+                    <div id="name"> 清粥加酒 </div>
+                    <div id="contact">
+                        <a onmouseover="qq_imgshow()"  onmouseout="qq_imgclose()" id="contact1" href="#"><img src="images/QQ.png"></a>
+                        <a onmouseover="wechat_imgshow()"  onmouseout="wechat_imgclose()" id="contact2" href="#"><img src="images/wechat.png"></a>
+                        <a onmouseover="email_show()"  onmouseout="email_close()" id="contact3" href="#"><img src="images/email.png"></a>
+                        <div id="erweima_div">
+                            <!-- qq二维码对话框样式的div  -->
+                            <div id="qq_div">
+                                <div id="qq1"></div>
+                                <div id="qq2">
+                                    <div id="qq_img"></div>
+                                </div>
+                            </div>
+                            <!--  微信二维码对话框式样的div -->
+                            <div id="wechat_div">
+                                <div id="wechat1"></div>
+                                <div id="wechat2">
+                                    <div id="wechat_img"></div>
+                                </div>
+                            </div>
+                            <!--  邮箱对话框式样的div      -->
+                            <div id="email_div">
+                                <div id="email1"></div>
+                                <div id="email2">
+                                    <div id="email_address">
+                                        <div> QQ邮箱：576922471@qq.com </div>
+                                        <div> 163邮箱：Cxy980525@163.com </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="mid_part">
+                    <div id="skill_img"></div>
+                </div>
+                <div id="right_part">
+                    <div>清粥加酒的主页</div>
+
+                    <div id="welcome">
+                        <!--      welcome动态效果          -->
+                        <div id="w">W</div>
+                        <div id="e">E</div>
+                        <div id="l">L</div>
+                        <div id="c">C</div>
+                        <div id="o">O</div>
+                        <div id="m">M</div>
+                        <div id="e2">E</div>
+                        <!--  清除浮动    -->
+                        <div class="clear"></div>
+                    </div>
+
+                    <div id="date_time"></div>
+                </div>
+                <!--  清除浮动    -->
+                <div class="clear"></div>
+            </div>
+        </div>
+        <!--right-->
+        <div id="page_right" style="width: 30%;height: 200px;">
+        </div>
+    </div>
+
+    <!--  page2  下半部分 -->
+    <div id="page_2" >
+
+        <div style="width: 100%;display: flex;flex-direction: row;justify-content: center;">
+
+            <!-- 空-->
+            <div style="width: 30%;height: 30px;"> </div>
+
+            <!--导航标签页-->
+            <div style="width: 800px;height: 30px;">
+                <nav>
+                    <a onclick="navclick1()" class="lead" id="nav1" href="#">Websites</a>
+                    <a onclick="navclick2()" class="lead" id="nav2" href="#">Photos</a>
+                    <!--<a onclick="navclick3()" class="lead" id="nav3" href="#">Posters</a>-->
+                    <a onclick="navclick4()" class="lead" id="nav4" href="#">Resources</a>
+                    <div id="nav_choose"></div>
+                </nav>
+            </div>
+
+            <div style="width: 30%;height: 30px;">
+                <!-- 播放器 -->
+                <div id="music" >
+                    <audio controls="controls" style="outline: none;" loop="loop" >
+                        <source src="music/七月上.mp3"  type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div id="container_main" >
+
+            <!-- 网站 -->
+            <div id="container_web" >
+                <div id="webs">
+                    <div class="web" id="web1">
+                        <svg  class="rect" id="rect1" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <rect width="760" height="40" x="10" y="10" rx="20" ry="20" stroke-linecap="round">
+                                <div class="webname"><a href="https://www.csdn.net/" target="_blank" onmouseover="webname1_moveon()" onmouseout="webname1_moveout()" >CSDN</a></div>
+                            </rect>
+                        </svg>
+                    </div>
+                    <div class="web" id="web2">
+                        <svg  class="rect" id="rect2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <rect width="760" height="40" x="10" y="10" rx="20" ry="20" stroke-linecap="round">
+                                <div class="webname"><a href="https://www.jianshu.com/" target="_blank" onmouseover="webname2_moveon()" onmouseout="webname2_moveout()" >简书</a> </div>
+                            </rect>
+                        </svg>
+                    </div>
+                    <div class="web" id="web3">
+                        <svg  class="rect" id="rect3" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <rect width="760" height="40" x="10" y="10" rx="20" ry="20" stroke-linecap="round">
+                                <div class="webname"><a href="https://www.nowcoder.com/" target="_blank" onmouseover="webname3_moveon()" onmouseout="webname3_moveout()">牛客网</a></div>
+                            </rect>
+                        </svg>
+                    </div>
+                    <div class="web" id="web4">
+                        <svg  class="rect" id="rect4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <rect width="760" height="40" x="10" y="10" rx="20" ry="20" stroke-linecap="round">
+                                <div class="webname"><a href="https://github.com/" target="_blank" onmouseover="webname4_moveon()" onmouseout="webname4_moveout()">GitHub</a></div>
+                            </rect>
+                        </svg>
+                    </div>
+                    <div class="web" id="web5">
+                        <svg  class="rect" id="rect5" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <rect width="760" height="40" x="10" y="10" rx="20" ry="20" stroke-linecap="round">
+                                <div class="webname"><a href="https://www.zhansousou.com/user_nav/chengxuyuan" target="_blank" onmouseover="webname5_moveon()" onmouseout="webname5_moveout()">程序员导航</a></div>
+                            </rect>
+                        </svg>
+                    </div>
+                    <div class="web" id="web6">
+                        <svg  class="rect" id="rect6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <rect width="760" height="40" x="10" y="10" rx="20" ry="20" stroke-linecap="round">
+                                <div class="webname"><a href="http://www.jq22.com/" target="_blank" onmouseover="webname6_moveon()" onmouseout="webname6_moveout()">JQuery插件</a></div>
+                            </rect>
+                        </svg>
+                    </div>
+                    <div class="web" id="web7">
+                        <svg  class="rect" id="rect7" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <rect width="760" height="40" x="10" y="10" rx="20" ry="20" stroke-linecap="round">
+                                <div class="webname"><a href="http://www.codepen.io" target="_blank" onmouseover="webname7_moveon()" onmouseout="webname7_moveout()" >CodePen</a></div>
+                            </rect>
+                        </svg>
+                    </div>
+                    <div class="web" id="web8">
+                        <svg  class="rect" id="rect8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <rect width="760" height="40" x="10" y="10" rx="20" ry="20" stroke-linecap="round">
+                                <div class="webname"><a href="http://www.iconfont.cn" target="_blank" onmouseover="webname8_moveon()" onmouseout="webname8_moveout()" >阿里矢量图标库</a></div>
+                            </rect>
+                        </svg>
+                    </div>
+                    <div class="web" id="web9">
+                        <svg  class="rect" id="rect9" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <rect width="760" height="40" x="10" y="10" rx="20" ry="20" stroke-linecap="round">
+                                <div class="webname"><a href="http://www.flatuicolors.com" target="_blank" onmouseover="webname9_moveon()" onmouseout="webname9_moveout()">色彩搭配</a></div>
+                            </rect>
+                        </svg>
+                    </div>
+                    <div class="web" id="web10">
+                        <svg  class="rect" id="rect10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <rect width="760" height="40" x="10" y="10" rx="20" ry="20" stroke-linecap="round">
+                                <div class="webname"><a href="http://www.zhongguose.com" target="_blank" onmouseover="webname10_moveon()" onmouseout="webname10_moveout()">中国色</a></div>
+                            </rect>
+                        </svg>
+                    </div>
+                    
+
+                </div>
+            </div>
+
+            <!-- 照片div  -->
+            <div id="container_photo"  >
+                <div id="photos" >
+                    <div class="put_photo" id="put1">
+                        <div class="put_inf" id="put_inf1">
+                            <div style="width: 800px;height: 100px;font-size: 100px;overflow: hidden;">重庆</div>
+                            <div style="width: 800px;height: 50px;font-size: 50px;overflow: hidden;">2017-07</div>
+                        </div>
+                    </div>
+                    <div class="put_photo" id="put2">
+                        <div class="put_inf" id="put_inf2">
+                            <div style="width: 800px;height: 100px;font-size: 100px;overflow: hidden;">重庆</div>
+                            <div style="width: 800px;height: 50px;font-size: 50px;overflow: hidden;">2017-07</div>
+                        </div>
+                    </div>
+                    <div class="put_photo" id="put3">
+                        <div class="put_inf" id="put_inf3">
+                            <div style="width: 800px;height: 100px;font-size: 100px;overflow: hidden;">重庆</div>
+                            <div style="width: 800px;height: 50px;font-size: 50px;overflow: hidden;">2017-07</div>
+                        </div>
+                    </div>
+                    <div class="put_photo" id="put4">
+                        <div class="put_inf" id="put_inf4">
+                            <div style="width: 800px;height: 100px;font-size: 100px;overflow: hidden;">重庆</div>
+                            <div style="width: 800px;height: 50px;font-size: 50px;overflow: hidden;">2017-07</div>
+                        </div>
+                    </div>
+                    <div class="put_photo" id="put5">
+                        <div class="put_inf" id="put_inf5">
+                            <div style="width: 800px;height: 100px;font-size: 100px;overflow: hidden;">上海</div>
+                            <div style="width: 800px;height: 50px;font-size: 50px;overflow: hidden;">2017-05</div>
+                        </div>
+                    </div>
+                    <div class="put_photo" id="put6">
+                        <div class="put_inf" id="put_inf6">
+                            <div style="width: 800px;height: 100px;font-size: 100px;overflow: hidden;">春天</div>
+                            <div style="width: 800px;height: 50px;font-size: 50px;overflow: hidden;">2018-03</div>
+                        </div>
+                    </div>
+                    <div class="put_photo" id="put7">
+                        <div class="put_inf" id="put_inf7">
+                            <div style="width: 800px;height: 100px;font-size: 100px;overflow: hidden;">春天</div>
+                            <div style="width: 800px;height: 50px;font-size: 50px;overflow: hidden;">2018-03</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- 笔记div   -->
+            <div id="container_note" >
+                <div id="notebook">
+                    <div style="width: 800px;display: flex;flex-direction: row;overflow: hidden;">
+                        <!--  第一块      -->
+                        <div id="book_block1">
+                            <!--   类别     -->
+                            <div id="book_block1_kind" onclick="book1_click()">
+                                <div style="width: 266px;display: flex;flex-direction: row;justify-content: center;">
+                                    <div id="book_block1_img"></div>
+                                </div>
+                                <div id="book_block1_name">Web前端</div>
+                            </div>
+                            <div id="book_block1_books">
+                                <div id="book_block1_books_part1"></div>
+                                <!--此处放书-->
+                                <div id="book_block1_books_part2">
+                                    <div class="books"><a href="notebook/HTML标签及规范基础.pdf" target="_blank">《HTML标签及其规范》</a></div>
+                                    <div class="books"><a href="notebook/CSS浮动布局&盒模型.pdf" target="_blank">《CSS浮动布局&盒模型》</a></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--  第二块      -->
+                        <div id="book_block2">
+                            <!--   类别     -->
+                            <div id="book_block2_kind" onclick="book2_click()">
+                                <div style="width: 266px;display: flex;flex-direction: row;justify-content: center;">
+                                    <div id="book_block2_img"></div>
+                                </div>
+                                <div id="book_block2_name">Java</div>
+                            </div>
+                            <div id="book_block2_books">
+                                <div id="book_block2_books_part1"></div>
+                                <div id="book_block2_books_part2"></div>
+                            </div>
+
+                        </div>
+                        <!--  第三块      -->
+                        <div id="book_block3">
+                            <!--   类别     -->
+                            <div id="book_block3_kind" onclick="book3_click()">
+                                <div style="width: 266px;display: flex;flex-direction: row;justify-content: center;">
+                                    <div id="book_block3_img"></div>
+                                </div>
+                                <div id="book_block3_name">其他</div>
+                            </div>
+                            <div id="book_block3_books">
+                                <div id="book_block3_books_part1"></div>
+                                <div id="book_block3_books_part2">
+                                    <div class="books"><a href="notebook/软件工程与计算.pdf" target="_blank">《软件工程与计算 卷2》</a></div>
+                                    <div class="books"><a href="notebook/数据结构.pdf" target="_blank">《数据结构 笔记》</a></div>
+                                    <div class="books"><a href="notebook/操作系统.pdf" target="_blank">《操作系统 笔记》</a></div>
+                                    <div class="books"><a href="notebook/操作系统PV总结.pdf" target="_blank">《操作系统 PV操作》</a></div>
+                                    <div class="books"><a href="notebook/软件工程.pdf" target="_blank">《软件工程 笔记》</a></div>
+                                    <div class="books"><a href="notebook/计算机网络.pdf" target="_blank">《计算机网络 笔记》</a></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="put_4and5" style="width: 800px;height:600px;margin-top: 100px;display: flex;flex-direction: row;overflow: hidden;transition: margin-top 0.8s;">
+                        <!--  第四块      -->
+                        <div id="book_block4">
+                            <!--   类别     -->
+                            <div id="book_block4_kind" onclick="book4_click()" >
+                                <div style="width: 266px;display: flex;flex-direction: row;justify-content: center;">
+                                    <div id="book_block4_img"></div>
+                                </div>
+                                <div id="book_block4_name">数学</div>
+                            </div>
+                            <div id="book_block4_books">
+                                <div id="book_block4_books_part1"></div>
+                                <div id="book_block4_books_part2">
+                                    <div class="books"><a href="notebook/线性代数.pdf" target="_blank">《线性代数 笔记》</a></div>
+                                    <div class="books"><a href="notebook/高等数学.pdf" target="_blank">《高等数学 笔记》</a></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--  第五块      -->
+                        <div id="book_block5">
+                            <!--   类别     -->
+                            <div id="book_block5_kind" onclick="book5_click()" >
+                                <div style="width: 266px;display: flex;flex-direction: row;justify-content: center;">
+                                    <div id="book_block5_img"></div>
+                                </div>
+                                <div id="book_block5_name">英语</div>
+                            </div>
+                            <div id="book_block5_books">
+                                <div id="book_block5_books_part1"></div>
+                                <div id="book_block5_books_part2">
+                                    <div class="books"><a href="notebook/恋练有词.pdf" target="_blank">《恋练有词》</a></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+
